@@ -1,0 +1,559 @@
+---
+const date = new Date('2026-12-19T18:00:00-05:00');
+const message = encodeURIComponent('Hola, confirmo mi asistencia a los XV años de Danna Sofía.');
+const phoneNumbers = ['573000000000'];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <title>Mis XV · Danna Sofía</title>
+  </head>
+  <body>
+    <!-- Fondo de estrellas decorativas -->
+    <div class="stars-bg" aria-hidden="true">
+      <span class="star" style="--x:10%;--y:15%;--s:3px;--dur:3s"></span>
+      <span class="star" style="--x:25%;--y:8%;--s:2px;--dur:4s;--delay:1s"></span>
+      <span class="star" style="--x:45%;--y:20%;--s:4px;--dur:3.5s;--delay:0.5s"></span>
+      <span class="star" style="--x:65%;--y:12%;--s:2px;--dur:4.5s;--delay:2s"></span>
+      <span class="star" style="--x:80%;--y:25%;--s:3px;--dur:3s;--delay:1.5s"></span>
+      <span class="star" style="--x:15%;--y:60%;--s:2px;--dur:4s;--delay:3s"></span>
+      <span class="star" style="--x:70%;--y:55%;--s:3px;--dur:3.5s;--delay:0.8s"></span>
+      <span class="star" style="--x:90%;--y:45%;--s:2px;--dur:4.5s;--delay:2.5s"></span>
+    </div>
+
+    <main>
+      <!-- HERO / PORTADA -->
+      <section class="cover">
+        <video class="cover-video" autoplay muted loop playsinline aria-hidden="true">
+          <source src="/videohero.mp4" type="video/mp4" />
+        </video>
+        <div class="cover-art" aria-hidden="true"></div>
+
+        <div class="cover-copy">
+          <p class="eyebrow">¡Celebra conmigo!</p>
+          <p class="small-title">Mis</p>
+          <h1 class="age">XV</h1>
+          <p class="name">Danna Sofía</p>
+          <p class="date">19 · 12 · 2026</p>
+          <a class="scroll-arrow" href="#detalles" aria-label="Continuar a la invitación">↓</a>
+        </div>
+      </section>
+
+      <!-- INVITACIÓN -->
+      <section class="story section" id="detalles">
+        <p class="eyebrow">Una noche mágica</p>
+
+        <div class="invite">
+          <p class="invite-family">La familia Sánchez Valderrama</p>
+          <p class="invite-cta">te invita a celebrar los XV años de</p>
+          <p class="invite-hero">Danna Sofía</p>
+        </div>
+
+        <h2 class="story-heading">Un momento que marcará<br />el inicio de una<br /><em>nueva etapa.</em></h2>
+
+        <div class="copy invite-copy">
+          <p>Quince años, una noche mágica que brillará para siempre. Quiero compartir contigo la alegría de este momento tan especial.</p>
+          <p>Con mucha ilusión, te espero para celebrar juntos esta celebración inolvidable.</p>
+          <p class="signature">Con cariño,<br /><strong>Danna Sofía</strong></p>
+        </div>
+      </section>
+
+      <!-- FECHA Y HORA -->
+      <section class="event section">
+        <p class="eyebrow">Guarda la fecha</p>
+        <div class="event-card">
+          <div>
+            <span class="label">Sábado</span>
+            <strong class="date-display">
+              <b>19</b>
+              <span>diciembre<br /><small>2026</small></span>
+            </strong>
+          </div>
+          <div>
+            <span class="label">Hora</span>
+            <strong>Por confirmar</strong>
+          </div>
+        </div>
+        <div class="countdown" data-countdown data-target={date.toISOString()}>
+          <div><b data-days>00</b><span>días</span></div>
+          <div><b data-hours>00</b><span>horas</span></div>
+          <div><b data-minutes>00</b><span>minutos</span></div>
+          <div><b data-seconds>00</b><span>segundos</span></div>
+        </div>
+        <p class="punctual">Te esperamos con puntualidad para disfrutar desde el inicio de la fiesta.</p>
+      </section>
+
+      <!-- LUGAR -->
+      <section class="venue section">
+        <div class="venue-photo">
+          <div class="venue-placeholder">
+            <span class="venue-icon">📍</span>
+            <p>Por confirmar</p>
+            <small>Dirección por confirmar</small>
+          </div>
+        </div>
+        <div class="venue-copy">
+          <p class="eyebrow">El lugar</p>
+          <h2>Por confirmar</h2>
+          <address>Dirección por confirmar</address>
+          <a class="button button-disabled" href="#">Cómo llegar ↗</a>
+        </div>
+      </section>
+
+      <!-- DETALLES -->
+      <section class="details section">
+        <p class="eyebrow">Detalles de la noche</p>
+        <h2 class="details-title">Todo pensado para<br /><em>celebrar juntos.</em></h2>
+        <div class="detail-grid">
+          <article>
+            <span class="detail-symbol">✦</span>
+            <h3>Código de<br /><em>vestimenta</em></h3>
+            <p><strong>Por confirmar</strong><br />Te avisaremos pronto.</p>
+          </article>
+          <article>
+            <span class="detail-symbol">♡</span>
+            <h3>Mesa de<br /><em>regalos</em></h3>
+            <p><strong>Tu presencia es el mejor regalo</strong><br />Tu compañía será el obsequio más valioso.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- RSVP -->
+      <section class="rsvp section">
+        <p class="eyebrow">Confirma tu asistencia</p>
+        <h2>¿Nos<br /><em>acompañas?</em></h2>
+        <p>Por favor confirma antes del <strong>12 de diciembre de 2026</strong>.</p>
+
+        <div class="confirm-note" role="note">
+          <strong>Confirma tu asistencia para asegurar tu lugar</strong>
+          <span>Así podremos tener todo preparado y esperarte como te mereces.</span>
+        </div>
+
+        <div class="actions">
+          {phoneNumbers.map((phone) => (
+            <a
+              class="button button-light rsvp-link"
+              data-phone={phone}
+              href={`https://wa.me/${phone}?text=${message}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Confirmar por WhatsApp ↗
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="hashtag">#DannaXV · #Mis15Danna</p>
+        <p class="footer-name">Danna Sofía · XV</p>
+      </footer>
+    </main>
+
+    <!-- COUNTDOWN -->
+    <script is:inline>
+      const countdown = document.querySelector('[data-countdown]');
+      if (countdown) {
+        const tick = () => {
+          const diff = Math.max(0, new Date(countdown.dataset.target).getTime() - Date.now());
+          const values = [
+            Math.floor(diff / 86400000),
+            Math.floor(diff / 3600000) % 24,
+            Math.floor(diff / 60000) % 60,
+            Math.floor(diff / 1000) % 60
+          ];
+          ['days', 'hours', 'minutes', 'seconds'].forEach((key, i) => {
+            document.querySelector(`[data-${key}]`).textContent = String(values[i]).padStart(2, '0');
+          });
+        };
+        tick();
+        setInterval(tick, 1000);
+      }
+    </script>
+  </body>
+</html>
+
+<style is:global>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+:root {
+  --bg: #faf7f2;
+  --navy: #1a1a2e;
+  --navy-2: #16213e;
+  --gold: #c9a84c;
+  --gold-2: #e6bd83;
+  --gold-light: #f4e3c0;
+  --rose: #b76e79;
+  --rose-soft: #e8c4c8;
+  --ink: #2d2d3a;
+  --text-muted: #6b6b7b;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.65 var(--sans);
+}
+
+/* ── Stars background ── */
+.stars-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.star {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s, 3px);
+  height: var(--s, 3px);
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle var(--dur, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.7; transform: scale(1); }
+}
+
+/* ── Cover / Hero ── */
+.cover {
+  min-height: 100svh;
+  position: relative;
+  display: grid;
+  place-items: end center;
+  padding-bottom: 7vh;
+  text-align: center;
+  color: #f4f8ff;
+  background: var(--navy);
+}
+.cover-art {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(120% 90% at 50% 0%, #1d3a6644 0%, #1a1a2e88 55%, #0f0f23aa 100%);
+}
+.cover-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.cover-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 45% at 50% 82%, #c9a84c33 0%, transparent 70%);
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #1a1a2e00, #1a1a2e99);
+  z-index: 1;
+}
+.cover-copy {
+  position: relative;
+  z-index: 2;
+  width: min(92%, 650px);
+}
+
+/* ── Typography ── */
+.eyebrow, .label {
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: .7rem;
+}
+.cover .eyebrow { color: var(--rose-soft); }
+.small-title {
+  font: italic 1.6rem var(--serif);
+  margin: 4rem 0 0;
+}
+.age {
+  font: clamp(10rem, 35vw, 19rem)/.8 var(--serif);
+  font-weight: 400;
+  letter-spacing: -.08em;
+  margin: .4rem 0;
+  background: linear-gradient(110deg, #fdf6ff 12%, #e6bd83 35%, #fff8ec 48%, #c9a84c 62%, #f4e3c0 80%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 4.5s ease-in-out infinite;
+}
+@keyframes shine {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.name {
+  font: italic clamp(4.5rem, 16vw, 10rem)/.85 'Parisienne', cursive;
+  letter-spacing: .01em;
+  margin: 3.5rem 0 1.15rem;
+  color: #fdf6e7;
+  text-shadow: 0 2px 18px #0a1730cc;
+}
+.date {
+  margin-top: 1.6rem;
+  letter-spacing: .2em;
+  color: var(--rose-soft);
+}
+.scroll-arrow {
+  display: inline-block;
+  margin-top: 5rem;
+  color: var(--gold-2);
+  text-decoration: none;
+  font: 2rem/1 var(--serif);
+  animation: float-arrow 2s ease-in-out infinite;
+}
+.scroll-arrow:focus-visible { outline: 1px solid #fff; padding: .3rem; }
+@keyframes float-arrow { 50% { transform: translateY(7px); } }
+
+/* ── Sections ── */
+.section {
+  padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 8vw, 9rem);
+}
+.section .eyebrow { color: var(--rose); margin: 0 0 .8rem; }
+
+/* ── Story / Invite ── */
+.story { background: var(--bg); text-align: center; position: relative; }
+.invite { margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+.invite-family {
+  font: italic 1.15rem var(--serif);
+  margin: 0 0 .5rem;
+  letter-spacing: .02em;
+}
+.invite-cta { margin: .4rem 0; color: var(--text-muted); }
+.invite-hero {
+  font: italic clamp(3rem, 10vw, 6rem)/1 'Parisienne', cursive;
+  margin: .4rem 0 0;
+  color: var(--navy);
+}
+.story-heading {
+  font: 400 clamp(2.4rem, 6vw, 4.2rem)/1.08 var(--serif);
+  letter-spacing: -.03em;
+  margin: 0 0 2rem;
+}
+.story-heading em, .details-title em {
+  font-style: italic;
+  background: linear-gradient(110deg, #b98a3f, #e6bd83 60%, #c89a4a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.copy { max-width: 620px; margin: 0 auto; text-align: left; }
+.invite-copy p { margin: 0 0 1.1rem; color: #3c4a63; }
+.signature {
+  font: italic 1.3rem var(--serif);
+  color: var(--navy);
+  margin-top: 1.6rem;
+}
+
+/* ── Event / Date ── */
+.event {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  color: #eef4ff;
+  text-align: center;
+}
+.event .eyebrow { color: var(--gold-2); }
+.event-card {
+  display: flex;
+  justify-content: center;
+  gap: clamp(2.5rem, 8vw, 6rem);
+  margin: 1rem 0 2.5rem;
+}
+.event-card .label { color: #9db8dc; display: block; margin-bottom: .5rem; }
+.event-card strong { font: 400 clamp(2rem, 5vw, 3.2rem)/1 var(--serif); }
+.date-display { display: flex; align-items: center; gap: .7rem; justify-content: center; }
+.date-display b {
+  font-size: clamp(3.4rem, 9vw, 5.6rem);
+  line-height: .9;
+  color: var(--gold-2);
+}
+.date-display span { font-size: 1.05rem; line-height: 1.25; text-align: left; color: #eef4ff; }
+.date-display small { color: #9db8dc; }
+
+/* ── Countdown ── */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 2.2rem);
+  margin: 0 0 2rem;
+}
+.countdown div { min-width: 74px; }
+.countdown b { font: 500 clamp(1.6rem, 4vw, 2.4rem) var(--sans); color: var(--gold-2); }
+.countdown span {
+  display: block;
+  font: 500 .66rem var(--sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #9db8dc;
+}
+.punctual { max-width: 480px; margin: 0 auto; color: #b9cbe6; font-size: .95rem; }
+
+/* ── Venue ── */
+.venue {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+  background: var(--bg);
+}
+.venue-photo {
+  position: relative;
+  min-height: 320px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 14px 14px 0 var(--navy);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  display: grid;
+  place-items: center;
+}
+.venue-placeholder {
+  text-align: center;
+  color: #9db8dc;
+}
+.venue-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+.venue-placeholder p { font: italic 1.5rem var(--serif); color: var(--gold-2); margin: 0 0 .5rem; }
+.venue-placeholder small { font-size: .85rem; }
+.venue-copy .eyebrow { margin-top: 0; }
+.venue-copy h2 {
+  font: 400 clamp(2rem, 5vw, 3.2rem)/1.1 var(--serif);
+  letter-spacing: -.02em;
+  margin: .2rem 0 1rem;
+  color: var(--navy);
+}
+.venue-copy address {
+  font-style: normal;
+  color: var(--text-muted);
+  margin: 0 0 1.4rem;
+}
+
+/* ── Buttons ── */
+.button {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: #fffdf6;
+  text-decoration: none;
+  padding: .85rem 1.5rem;
+  font: 500 .78rem var(--sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.button:hover { background: #b89a3e; border-color: #b89a3e; }
+.button span { display: inline-block; margin-left: .3rem; }
+.button-disabled {
+  background: #999;
+  border-color: #999;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Details ── */
+.details { position: relative; overflow: hidden; text-align: center; }
+.details-title {
+  font: 400 clamp(2.2rem, 5vw, 3.6rem)/1.1 var(--serif);
+  letter-spacing: -.03em;
+  margin: 0 0 2.5rem;
+  color: var(--navy);
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.detail-grid article {
+  border: 1px solid #e2dccb;
+  background: #fffdf8;
+  padding: 1.8rem 1.4rem;
+  box-shadow: 8px 8px 0 #eee6d4;
+}
+.detail-symbol {
+  display: inline-block;
+  font: 1.5rem var(--serif);
+  color: var(--gold);
+  margin-bottom: .6rem;
+}
+.detail-grid h3 {
+  font: 400 1.35rem var(--serif);
+  margin: .2rem 0 .9rem;
+  color: var(--navy);
+}
+.detail-grid h3 em { color: var(--gold); }
+.detail-grid p { margin: 0; color: var(--text-muted); font-size: .95rem; }
+
+/* ── RSVP ── */
+.rsvp {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  color: #eef4ff;
+  text-align: center;
+}
+.rsvp .eyebrow { color: var(--gold-2); }
+.rsvp h2 {
+  font: 400 clamp(2.4rem, 6vw, 4rem)/1 var(--serif);
+  letter-spacing: -.03em;
+  margin: 0 0 1.2rem;
+}
+.rsvp h2 em { color: var(--gold-2); }
+.rsvp p { color: #b9cbe6; margin: 0 0 .6rem; }
+.confirm-note {
+  max-width: 520px;
+  margin: 1.6rem auto 1.8rem;
+  border: 1px solid var(--gold);
+  background: #16355f66;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.confirm-note strong { color: var(--gold-2); font: italic 1.15rem var(--serif); }
+.confirm-note span { color: #cfe0f7; font-size: .9rem; }
+.actions { margin-top: 1.4rem; }
+.button-light { background: transparent; color: var(--gold-2); border-color: var(--gold); }
+.button-light:hover { background: var(--gold); color: #fffdf6; }
+
+/* ── Footer ── */
+footer {
+  background: #0f0f23;
+  color: #7d93b8;
+  text-align: center;
+  padding: 3rem 1rem 2.5rem;
+  font-size: .9rem;
+}
+.hashtag { letter-spacing: .08em; margin: 0 0 .4rem; }
+.footer-name {
+  font: italic 1.2rem var(--serif);
+  color: #cfe0f7;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .venue { grid-template-columns: 1fr; }
+  .venue-photo { min-height: 240px; }
+  .cover-copy { width: min(94%, 520px); }
+}
+</style>
