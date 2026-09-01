@@ -45,18 +45,19 @@ const phoneNumbers = ['573000000000'];
 
       <!-- INVITACIÓN -->
       <section class="story section" id="detalles">
-        <p class="eyebrow">Una noche mágica</p>
+        <p class="eyebrow">Una nueva etapa</p>
 
         <div class="invite">
-          <p class="invite-family">La familia Sánchez Valderrama</p>
-          <p class="invite-cta">te invita a celebrar los XV años de</p>
+          <p class="invite-family">Las familias Sánchez y Valderrama</p>
+          <p class="invite-parents">Diego y Norma</p>
+          <p class="invite-cta">te invitan a celebrar los XV años de</p>
           <p class="invite-hero">Danna Sofía</p>
         </div>
 
         <h2 class="story-heading">Un momento que marcará<br />el inicio de una<br /><em>nueva etapa.</em></h2>
 
         <div class="copy invite-copy">
-          <p>Quince años, una noche mágica que brillará para siempre. Quiero compartir contigo la alegría de este momento tan especial.</p>
+          <p>Quince años, una nueva etapa que brillará para siempre. Quiero compartir contigo la alegría de este momento tan especial.</p>
           <p>Con mucha ilusión, te espero para celebrar juntos esta celebración inolvidable.</p>
           <p class="signature">Con cariño,<br /><strong>Danna Sofía</strong></p>
         </div>
@@ -112,12 +113,12 @@ const phoneNumbers = ['573000000000'];
           <article>
             <span class="detail-symbol">✦</span>
             <h3>Código de<br /><em>vestimenta</em></h3>
-            <p><strong>Por confirmar</strong><br />Te avisaremos pronto.</p>
+            <p><strong>Libre</strong></p>
           </article>
           <article>
-            <span class="detail-symbol">♡</span>
+            <span class="detail-symbol">✉</span>
             <h3>Mesa de<br /><em>regalos</em></h3>
-            <p><strong>Tu presencia es el mejor regalo</strong><br />Tu compañía será el obsequio más valioso.</p>
+            <p><strong>Lluvia de sobres</strong></p>
           </article>
         </div>
       </section>
@@ -155,6 +156,14 @@ const phoneNumbers = ['573000000000'];
       </footer>
     </main>
 
+    <!-- MÚSICA -->
+    <audio id="bg-music" loop preload="none">
+      <source src="/no-crezcas-mas.mp3" type="audio/mpeg" />
+    </audio>
+    <button class="music-btn" id="music-btn" type="button" aria-label="Reproducir música" aria-pressed="false">
+      <span class="music-icon">♪</span>
+    </button>
+
     <!-- COUNTDOWN -->
     <script is:inline>
       const countdown = document.querySelector('[data-countdown]');
@@ -173,6 +182,31 @@ const phoneNumbers = ['573000000000'];
         };
         tick();
         setInterval(tick, 1000);
+      }
+
+      // Botón de música
+      const musicBtn = document.getElementById('music-btn');
+      const bgMusic = document.getElementById('bg-music');
+      if (musicBtn && bgMusic) {
+        musicBtn.addEventListener('click', () => {
+          if (bgMusic.paused) {
+            bgMusic
+              .play()
+              .then(() => {
+                musicBtn.classList.add('playing');
+                musicBtn.setAttribute('aria-pressed', 'true');
+                musicBtn.setAttribute('aria-label', 'Pausar música');
+                musicBtn.querySelector('.music-icon').textContent = '♫';
+              })
+              .catch(() => {});
+          } else {
+            bgMusic.pause();
+            musicBtn.classList.remove('playing');
+            musicBtn.setAttribute('aria-pressed', 'false');
+            musicBtn.setAttribute('aria-label', 'Reproducir música');
+            musicBtn.querySelector('.music-icon').textContent = '♪';
+          }
+        });
       }
     </script>
   </body>
@@ -336,6 +370,12 @@ body {
   font: italic 1.15rem var(--serif);
   margin: 0 0 .5rem;
   letter-spacing: .02em;
+}
+.invite-parents {
+  font: italic 1.05rem var(--serif);
+  margin: 0 0 .5rem;
+  letter-spacing: .02em;
+  color: var(--text-muted);
 }
 .invite-cta { margin: .4rem 0; color: var(--text-muted); }
 .invite-hero {
@@ -502,6 +542,12 @@ body {
 }
 .detail-grid h3 em { color: var(--gold); }
 .detail-grid p { margin: 0; color: var(--text-muted); font-size: .95rem; }
+.detail-grid p strong {
+  font: italic 1.25rem/1.2 var(--serif);
+  color: var(--navy);
+  letter-spacing: .01em;
+  display: block;
+}
 
 /* ── RSVP ── */
 .rsvp {
@@ -548,6 +594,37 @@ footer {
   font: italic 1.2rem var(--serif);
   color: #cfe0f7;
   margin: 0;
+}
+
+/* ── Botón de música ── */
+.music-btn {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 60;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: var(--navy);
+  color: var(--gold-2);
+  font: 1.5rem/1 var(--serif);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 18px rgba(10, 20, 40, .35);
+  transition: transform .2s ease, background .2s ease;
+}
+.music-btn:hover { transform: scale(1.08); }
+.music-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.music-btn.playing {
+  background: var(--gold);
+  color: #fffdf6;
+  animation: music-pulse 1.6s ease-in-out infinite;
+}
+@keyframes music-pulse {
+  0%, 100% { box-shadow: 0 6px 18px rgba(10, 20, 40, .35); }
+  50% { box-shadow: 0 6px 26px rgba(201, 168, 76, .6); }
 }
 
 /* ── Responsive ── */
