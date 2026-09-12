@@ -1,7 +1,9 @@
 ---
-const date = new Date('2026-12-19T18:00:00-05:00');
+const date = new Date('2026-12-19T19:00:00-05:00');
 const message = encodeURIComponent('Hola, confirmo mi asistencia a los XV años de Danna Sofía.');
 const phoneNumbers = ['573000000000'];
+const mapsUrl = 'https://maps.app.goo.gl/GPyWxJLXsPSJVCaR7';
+const mapsEmbedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.064491351018!2d-75.6234005!3d1.6989109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e2453003c022091%3A0x35c11961507e94c!2sSalon%20de%20eventos%20Casa%20Roma%20y%20Hospedaje!5e0!3m2!1ses-419!2sco!4v1789176357557!5m2!1ses-419!2sco';
 ---
 
 <!doctype html>
@@ -76,7 +78,7 @@ const phoneNumbers = ['573000000000'];
           </div>
           <div>
             <span class="label">Hora</span>
-            <strong>Por confirmar</strong>
+            <strong>7:00 p. m.</strong>
           </div>
         </div>
         <div class="countdown" data-countdown data-target={date.toISOString()}>
@@ -90,18 +92,21 @@ const phoneNumbers = ['573000000000'];
 
       <!-- LUGAR -->
       <section class="venue section">
-        <div class="venue-photo">
-          <div class="venue-placeholder">
-            <span class="venue-icon">📍</span>
-            <p>Por confirmar</p>
-            <small>Dirección por confirmar</small>
-          </div>
-        </div>
         <div class="venue-copy">
           <p class="eyebrow">El lugar</p>
-          <h2>Por confirmar</h2>
-          <address>Dirección por confirmar</address>
-          <a class="button button-disabled" href="#">Cómo llegar ↗</a>
+          <h2>Casa Roma</h2>
+          <address>Salon de eventos Casa Roma y Hospedaje</address>
+          <a class="button" href={mapsUrl} target="_blank" rel="noreferrer">Cómo llegar ↗</a>
+        </div>
+        <div class="venue-photo">
+          <iframe
+            class="venue-map"
+            src={mapsEmbedUrl}
+            title="Mapa de Salon de eventos Casa Roma y Hospedaje"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
       </section>
 
@@ -452,20 +457,30 @@ body {
   position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(1.5rem, 5vw, 4rem);
   align-items: center;
   background: var(--bg);
 }
+.venue-copy { text-align: center; }
 .venue-photo {
   position: relative;
-  min-height: 320px;
+  min-height: 420px;
+  width: min(100%, 980px);
+  margin: 0 auto;
   border-radius: 2px;
   overflow: hidden;
   box-shadow: 14px 14px 0 var(--navy);
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   display: grid;
   place-items: center;
+}
+.venue-map {
+  width: 100%;
+  min-height: 420px;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 .venue-placeholder {
   text-align: center;
@@ -629,8 +644,8 @@ footer {
 
 /* ── Responsive ── */
 @media (max-width: 720px) {
-  .venue { grid-template-columns: 1fr; }
-  .venue-photo { min-height: 240px; }
+  .venue-photo { min-height: 360px; }
+  .venue-map { min-height: 360px; }
   .cover-copy { width: min(94%, 520px); }
 }
 </style>
